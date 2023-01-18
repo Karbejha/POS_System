@@ -59,5 +59,8 @@ download.place(x=280 , y=220)
 status = Label(root,text="Status: Ready",font="Calibre 10 italic",fg="black",bg="white",anchor="w")
 status.place(rely=1,anchor="sw",relwidth=1)
 
+copyRight = Label(root, text="All Copy Rights Reserved to Mohamad Karbejha®", font="Calibre 8 bold",fg="black",bg="white",anchor="e")
+copyRight.place(rely=1,anchor="se",relx=1)
+
 
 root.mainloop()
