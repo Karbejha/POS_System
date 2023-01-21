@@ -20,6 +20,21 @@ class POS:
         Amount = StringVar()
         choice = StringVar()
 
+        self.Coffe1 = PhotoImage(file="Coffe1.jpg")
+        self.Coffe2 = PhotoImage(file="Coffe2.jpg")
+        self.Coffe3 = PhotoImage(file="Coffe3.jpg")
+        self.Coffe4 = PhotoImage(file="Coffe4.jpg")
+        self.Coffe5 = PhotoImage(file="Coffe5.jpg")
+        self.Coffe6 = PhotoImage(file="Coffe6.jpg")
+
+        self.Drink1 = PhotoImage(file="Coffe1.jpg")
+        self.Drink2 = PhotoImage(file="Coffe1.jpg")
+        self.Drink3 = PhotoImage(file="Coffe1.jpg")
+        self.Drink4 = PhotoImage(file="Coffe1.jpg")
+        self.Drink5 = PhotoImage(file="Coffe1.jpg")
+        self.Drink6 = PhotoImage(file="Coffe1.jpg")
+
+
 
         MainFrame = Frame(self.root,bg='cadetblue')
         MainFrame.grid(padx=8,pady=5)
@@ -68,6 +83,38 @@ class POS:
         self.txtTotal = Entry(CallFrame, font=('arial', 14, 'bold'), textvariable=SubTotal_Input, bd=2, width=24)
         self.txtTotal.grid(row=2, column=1, sticky=W, padx=5)
 
+#============================  Entry And Widget 2 ================================
+
+        self.lblMop = Label(ChangeFrame,font=('arial',14,'bold'),text="Methof of Payment",bd=5)
+        self.lblMop.grid(row=0,column=0,sticky=W,padx=5)
+        self.cboMop = ttk.Combobox(ChangeFrame, font=('arial', 14, 'bold'), width=36 , state='readonly', textvariable=choice,justify=RIGHT)
+        self.cboMop['values']=('','Cash','Visa Card','Master Card')
+        self.cboMop.current(0)
+        self.cboMop.grid(row=0, column=1)
+
+        self.lblCost = Label(ChangeFrame, font=('arial', 14, 'bold'), text="Cash", bd=5)
+        self.lblCost.grid(row=1, column=0, sticky=W, padx=5)
+        self.txtCost = Entry(ChangeFrame, font=('arial', 14, 'bold'), textvariable=SubTotal_Input, bd=2, width=38)
+        self.txtCost.grid(row=1, column=1, sticky=W, padx=5)
+
+        self.lblChange = Label(ChangeFrame, font=('arial', 14, 'bold'), text="Change", bd=5)
+        self.lblChange.grid(row=2, column=0, sticky=W, padx=5)
+        self.txtChange = Entry(ChangeFrame, font=('arial', 14, 'bold'), textvariable=SubTotal_Input, bd=2, width=38)
+        self.txtChange.grid(row=2, column=1, sticky=W, padx=5)
+
+#============================  Entry And Widget 2 ================================
+
+        self.btnPay = Button(RemoveFrame , padx=2,font=('arial',15,'bold'),text="Pay",bd=2,width=9,height=1)
+        self.btnPay.grid(row=0,column=0,pady=2,padx=4)
+
+        self.btnExit = Button(RemoveFrame, padx=2, font=('arial', 15, 'bold'), text="Exit", bd=2, width=9, height=1)
+        self.btnExit.grid(row=0, column=1, pady=2, padx=4)
+
+        self.btnReset = Button(RemoveFrame, padx=2, font=('arial', 15, 'bold'), text="Reset", bd=2, width=9, height=1)
+        self.btnReset.grid(row=1, column=0, pady=2, padx=4)
+
+        self.btnRemoveItem = Button(RemoveFrame, padx=2, font=('arial', 14, 'bold'), text="Remove Item", bd=2, width=9, height=1)
+        self.btnRemoveItem.grid(row=1, column=1, pady=2, padx=4)
 
 
 if __name__=='__main__':
