@@ -42,7 +42,7 @@ class POS:
         FoodItemFrame=LabelFrame(DataFrame,bd=5,width=450,height=300,padx=5,pady=2,relief=RIDGE,bg='cadetblue',font=('arial',12,'bold'),text="Items")
         FoodItemFrame.pack(side=RIGHT)
 
-        CallFrame = Frame(ButtonFrame,bd=5,width=432,height=140,relief=RIDGE)
+        CallFrame = Frame(ButtonFrame,bd=5,width=405,height=140,relief=RIDGE)
         CallFrame.grid(row = 0 , column=0,padx=5)
 
         ChangeFrame = Frame(ButtonFrame,bd=5,width=500,height=140 , pady=2,relief=RIDGE)
@@ -50,6 +50,25 @@ class POS:
 
         RemoveFrame=Frame(ButtonFrame,bd=5,width=400,height=140,pady=4,relief=RIDGE)
         RemoveFrame.grid(row=0,column=2,padx=5)
+
+        #============================  Entry And Widget ================================
+
+        self.lblsubTotal = Label(CallFrame,font=('arial',14,'bold'),text="Sub Total",bd=5)
+        self.lblsubTotal.grid(row=0,column=0,sticky=W,padx=5)
+        self.txtsubTotal = Entry(CallFrame, font=('arial', 14, 'bold'), textvariable=SubTotal_Input, bd=2,width=24)
+        self.txtsubTotal.grid(row=0, column=1, sticky=W, padx=5)
+
+        self.lblTax = Label(CallFrame, font=('arial', 14, 'bold'), text="Tax", bd=5)
+        self.lblTax.grid(row=1, column=0, sticky=W, padx=5)
+        self.txtTax = Entry(CallFrame, font=('arial', 14, 'bold'), textvariable=SubTotal_Input, bd=2, width=24)
+        self.txtTax.grid(row=1, column=1, sticky=W, padx=5)
+
+        self.lblTotal = Label(CallFrame, font=('arial', 14, 'bold'), text="Total", bd=5)
+        self.lblTotal.grid(row=2, column=0, sticky=W, padx=5)
+        self.txtTotal = Entry(CallFrame, font=('arial', 14, 'bold'), textvariable=SubTotal_Input, bd=2, width=24)
+        self.txtTotal.grid(row=2, column=1, sticky=W, padx=5)
+
+
 
 if __name__=='__main__':
     root = Tk()
