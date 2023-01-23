@@ -20,40 +20,41 @@ class POS:
         Amount = StringVar()
         choice = StringVar()
 
-        self.Coffe1 = PhotoImage(file="Coffe1.jpg")
-        self.Coffe2 = PhotoImage(file="Coffe2.jpg")
-        self.Coffe3 = PhotoImage(file="Coffe3.jpg")
-        self.Coffe4 = PhotoImage(file="Coffe4.jpg")
-        self.Coffe5 = PhotoImage(file="Coffe5.jpg")
-        self.Coffe6 = PhotoImage(file="Coffe6.jpg")
 
-        self.Drink1 = PhotoImage(file="Drink1.jpg")
-        self.Drink2 = PhotoImage(file="Drink2.jpg")
-        self.Drink3 = PhotoImage(file="Drink3.jpg")
-        self.Drink4 = PhotoImage(file="Drink4.jpg")
-        self.Drink5 = PhotoImage(file="Drink5.jpg")
-        self.Drink6 = PhotoImage(file="Drink6.jpg")
+        #self.Coffe1 = PhotoImage(file="Coffe1.gif")
+        self.Coffe2 = PhotoImage(file="Coffe2.gif")
+        #self.Coffe3 = PhotoImage(file="Coffe3.gif")
+        #self.Coffe4 = PhotoImage(file="Coffe4.gif")
+        #self.Coffe5 = PhotoImage(file="Coffe5.gif")
+        #self.Coffe6 = PhotoImage(file="Coffe6.gif")
 
-        self.Cake1 = PhotoImage(file="Cake1.jpg")
-        self.Cake2 = PhotoImage(file="Cake2.jpg")
-        self.Cake3 = PhotoImage(file="Cake3.jpg")
-        self.Cake4 = PhotoImage(file="Cake4.jpg")
-        self.Cake5 = PhotoImage(file="Cake5.jpg")
-        self.Cake6 = PhotoImage(file="Cake6.jpg")
+        #self.Drink1 = PhotoImage(file="Drink1.gif")
+        #self.Drink2 = PhotoImage(file="Drink2.gif")
+        #self.Drink3 = PhotoImage(file="Drink3.gif")
+        #self.Drink4 = PhotoImage(file="Drink4.gif")
+        #self.Drink5 = PhotoImage(file="Drink5.gif")
+        #self.Drink6 = PhotoImage(file="Drink6.gif")
 
-        self.IceCake1 = PhotoImage(file="IceCake1.jpg")
-        self.IceCake2 = PhotoImage(file="IceCake2.jpg")
-        self.IceCake3 = PhotoImage(file="IceCake3.jpg")
-        self.IceCake4 = PhotoImage(file="IceCake4.jpg")
-        self.IceCake5 = PhotoImage(file="IceCake5.jpg")
-        self.IceCake6 = PhotoImage(file="IceCake6.jpg")
+        #self.Cake1 = PhotoImage(file="Cake1.gif")
+        #self.Cake2 = PhotoImage(file="Cake2.gif")
+        #self.Cake3 = PhotoImage(file="Cake3.gif")
+        #self.Cake4 = PhotoImage(file="Cake4.gif")
+        #self.Cake5 = PhotoImage(file="Cake5.gif")
+        #self.Cake6 = PhotoImage(file="Cake6.gif")
 
-        self.FastFood1 = PhotoImage(file="FastFood1.jpg")
-        self.FastFood2 = PhotoImage(file="FastFood2.jpg")
-        self.FastFood3 = PhotoImage(file="FastFood3.jpg")
-        self.FastFood4 = PhotoImage(file="FastFood4.jpg")
-        self.FastFood5 = PhotoImage(file="FastFood5.jpg")
-        self.FastFood6 = PhotoImage(file="FastFood6.jpg")
+        #self.IceCake1 = PhotoImage(file="IceCake1.jpeg")
+        #self.IceCake2 = PhotoImage(file="IceCake2.jpeg")
+        #self.IceCake3 = PhotoImage(file="IceCake3.jpeg")
+        #self.IceCake4 = PhotoImage(file="IceCake4.jpeg")
+        #self.IceCake5 = PhotoImage(file="IceCake5.jpeg")
+        #self.IceCake6 = PhotoImage(file="IceCake6.jpeg")
+
+        #self.FastFood1 = PhotoImage(file="FastFood1.jpeg")
+        #self.FastFood2 = PhotoImage(file="FastFood2.jpeg")
+        #self.FastFood3 = PhotoImage(file="FastFood3.jpeg")
+        #self.FastFood4 = PhotoImage(file="FastFood4.jpeg")
+        #self.FastFood5 = PhotoImage(file="FastFood5.jpeg")
+        #self.FastFood6 = PhotoImage(file="FastFood6.jpeg")
 
 
         MainFrame = Frame(self.root,bg='cadetblue')
@@ -138,8 +139,8 @@ class POS:
 
 #============================  Entry And Widget 3 ================================
 
-        self.btnFastFood1 = Button(ChangeButtonFrame , padx=2,image=self.FastFood1,bd=2,width=104,height=104)
-        self.btnFastFood1.grid(row=0,column=0,pady=2,padx=4)
+        self.btnCoffe1 = Button(ChangeButtonFrame , padx=2,image=self.Coffe2,bd=2,width=104,height=104)
+        self.btnCoffe1.grid(row=0,column=0,pady=2,padx=4)
 
 
 
