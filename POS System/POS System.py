@@ -109,19 +109,19 @@ class POS:
 
         self.lblMop = Label(ChangeFrame,font=('arial',14,'bold'),text="Methof of Payment",bd=5)
         self.lblMop.grid(row=0,column=0,sticky=W,padx=5)
-        self.cboMop = ttk.Combobox(ChangeFrame, font=('arial', 14, 'bold'), width=36 , state='readonly', textvariable=choice,justify=RIGHT)
+        self.cboMop = ttk.Combobox(ChangeFrame, font=('arial', 14, 'bold'), width=34 , state='readonly', textvariable=choice,justify=RIGHT)
         self.cboMop['values']=('','Cash','Visa Card','Master Card')
         self.cboMop.current(0)
         self.cboMop.grid(row=0, column=1)
 
         self.lblCost = Label(ChangeFrame, font=('arial', 14, 'bold'), text="Cash", bd=5)
         self.lblCost.grid(row=1, column=0, sticky=W, padx=5)
-        self.txtCost = Entry(ChangeFrame, font=('arial', 14, 'bold'), textvariable=SubTotal_Input, bd=2, width=38)
+        self.txtCost = Entry(ChangeFrame, font=('arial', 14, 'bold'), textvariable=SubTotal_Input, bd=2, width=36)
         self.txtCost.grid(row=1, column=1, sticky=W, padx=5)
 
         self.lblChange = Label(ChangeFrame, font=('arial', 14, 'bold'), text="Change", bd=5)
         self.lblChange.grid(row=2, column=0, sticky=W, padx=5)
-        self.txtChange = Entry(ChangeFrame, font=('arial', 14, 'bold'), textvariable=SubTotal_Input, bd=2, width=38)
+        self.txtChange = Entry(ChangeFrame, font=('arial', 14, 'bold'), textvariable=SubTotal_Input, bd=2, width=36)
         self.txtChange.grid(row=2, column=1, sticky=W, padx=5)
 
 #============================  Entry And Widget 2 ================================
@@ -138,6 +138,37 @@ class POS:
         self.btnRemoveItem = Button(RemoveFrame, padx=2, font=('arial', 14, 'bold'), text="Remove Item", bd=2, width=9, height=1)
         self.btnRemoveItem.grid(row=1, column=1, pady=2, padx=4)
 
+        #=====================================  Function to add stuff to recipt board  ==========================================
+
+        def Coffee1():
+            ItemCost = 2.3
+            Tax = 2.5
+            self.POS_records.insert("",tk.END,values=("Coffee Capp","1","2.3"))
+            for child in self.POS_records.get_children():
+                ItemCost += float(self.POS_records.item(child,"values")[2])
+                SubTotal_Input.set((str('$%.2f'%(((ItemCost-2.3))))))
+                Tax_Input.set(str('$%.2f'%(((ItemCost-2.3)*Tax)/100)))
+                Total_Input.set(str('$%.2f'%((ItemCost-2.3) + ((ItemCost-2.3)* Tax)/100)))
+
+        def Coffee2():
+            ItemCost = 3.2
+            Tax = 1.5
+            self.POS_records.insert("",tk.END,values=("Coffee Capp","1","3.2"))
+            for child in self.POS_records.get_children():
+                ItemCost += float(self.POS_records.item(child,"values")[2])
+                SubTotal_Input.set((str('$%.2f'%(((ItemCost-3.2))))))
+                Tax_Input.set(str('$%.2f'%(((ItemCost-3.2)*Tax)/100)))
+                Total_Input.set(str('$%.2f'%((ItemCost-3.2) + ((ItemCost-3.2)* Tax)/100)))
+
+        def Coffee3():
+            ItemCost = 4.0
+            Tax = 1.0
+            self.POS_records.insert("",tk.END,values=("Coffee Capp","1","4.0"))
+            for child in self.POS_records.get_children():
+                ItemCost += float(self.POS_records.item(child,"values")[2])
+                SubTotal_Input.set((str('$%.2f'%(((ItemCost-4.0))))))
+                Tax_Input.set(str('$%.2f'%(((ItemCost-4.0)*Tax)/100)))
+                Total_Input.set(str('$%.2f'%((ItemCost-4.0) + ((ItemCost-4.0)* Tax)/100)))
 
         #=====================================  TreeView Widget  ==========================================
 
@@ -165,13 +196,13 @@ class POS:
 
         #=====================================  Button Widget 3 ==========================================
 
-        self.btnCoffe1 = Button(ChangeButtonFrame , padx=2,image=self.Coffe1,bd=2,width=104,height=104)
+        self.btnCoffe1 = Button(ChangeButtonFrame , padx=2,image=self.Coffe1,bd=2,width=104,height=104 , command=Coffee1)
         self.btnCoffe1.grid(row=0,column=0,pady=2,padx=4)
 
-        self.btnCoffe2 = Button(ChangeButtonFrame , padx=2,image=self.Coffe2,bd=2,width=104,height=104)
+        self.btnCoffe2 = Button(ChangeButtonFrame , padx=2,image=self.Coffe2,bd=2,width=104,height=104,command=Coffee2)
         self.btnCoffe2.grid(row=0,column=1,pady=2,padx=4)
 
-        self.btnCoffe3 = Button(ChangeButtonFrame , padx=2,image=self.Coffe3,bd=2,width=104,height=104)
+        self.btnCoffe3 = Button(ChangeButtonFrame , padx=2,image=self.Coffe3,bd=2,width=104,height=104,command=Coffee3)
         self.btnCoffe3.grid(row=1,column=0,pady=2,padx=4)
 
         self.btnCoffe4 = Button(ChangeButtonFrame, padx=2, image=self.Coffe4, bd=2, width=104, height=104)
@@ -189,7 +220,7 @@ class POS:
         self.btnDrink2 = Button(ChangeButtonFrame, padx=2, image=self.Drink2, bd=2, width=104, height=104)
         self.btnDrink2.grid(row=3, column=1, pady=2, padx=4)
 
-# ======================================  Food Button Widget 4 ============================================
+        # ======================================  Food Button Widget 4 ============================================
 
         self.btnFastFood1 = Button(FoodItemFrame, padx=2, image=self.FastFood1, bd=2, width=104, height=104)
         self.btnFastFood1.grid(row=0, column=0, pady=2, padx=4)
